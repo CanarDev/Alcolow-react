@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 
 function ToDoList() {
@@ -16,9 +17,19 @@ function ToDoList() {
     const handleTodoClick = (event) => {//on crée une fonction qui prend en paramètre l'event
         event.target.style.textDecoration = 'line-through';
     }
+
+    //bouton pour supprimer la tache sans en recréer une nouvelle
+    const deleteTodo = (event) => {
+        //todo contient la tache
+        const todo = event.target.parentElement;//on cible le parent de l'élément cliqué
+        todo.style.display = 'none';
+
+    }
+
     
     return (
-        <div className="App">
+        <div className="ToDoList">
+            < Navbar />
             <header className="App-header">
             </header>
             <div>
@@ -29,7 +40,7 @@ function ToDoList() {
                 </form>
                 <ul>
                     {todos.map(todo => (
-                        <li key={todo} onClick={handleTodoClick}>{todo}</li>//la key sert à identifier chaque élément
+                        <li key={todo} onClick={handleTodoClick}>{todo} <button onClick={deleteTodo}>X</button></li>
                     ))}
                 </ul>
             </div>

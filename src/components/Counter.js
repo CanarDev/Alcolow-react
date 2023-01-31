@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 
 
@@ -15,11 +16,15 @@ function Counter() {
 
 
   return (
-    <div>
-      <p>Vous avez cliqué {count} fois</p>
-      <button onClick={() => setCount(count + 1)}>
-        Cliquez ici
-      </button>
+
+    <div className="counter">
+      <Navbar />
+      <div>
+        <p>Vous avez cliqué {count} fois</p>
+        <button onClick={() => setCount(count + 1)}>
+          Cliquez ici
+        </button>
+      </div>
     </div>
 
 
