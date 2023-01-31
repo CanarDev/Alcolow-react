@@ -22,7 +22,8 @@ function ToDoList() {
     const deleteTodo = (event) => {
         //todo contient la tache
         const todo = event.target.parentElement;//on cible le parent de l'élément cliqué
-        todo.style.display = 'none';
+        //supprimer la tache
+        todo.remove();
 
     }
 
