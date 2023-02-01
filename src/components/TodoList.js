@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import {UseState, useEffect } from 'react';
 
 
 function ToDoList() {
@@ -7,6 +8,7 @@ function ToDoList() {
     const [todos, setTodos] = React.useState([]);//on crée un tableau vide
     const [input, setInput] = React.useState('');//on crée un input vide
 
+    //on ajoute une tache dans un local storage
     const addTodo = (event) => {//on ajoute une tache
         event.preventDefault();//on empêche le rechargement de la page
         setTodos([...todos, input]);//on ajoute la tache dans le tableau
@@ -24,16 +26,17 @@ function ToDoList() {
         const todo = event.target.parentElement;//on cible le parent de l'élément cliqué
         //supprimer la tache
         todo.remove();
-
     }
 
-    //sauvegarder les taches dans le local storage
-    React.useEffect(() => {
-        const data = localStorage.getItem('todos');
-        if (data) {
-            setTodos(JSON.parse(data));
-        }
-    }, []);
+    //on enregistre les taches dans le local storage
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos]);
+    
+
+    
+
+
 
 
     
@@ -50,10 +53,9 @@ function ToDoList() {
                 </form>
                 <ul>
                     {todos.map(todo => (
-                        <li onClick={handleTodoClick} key={todo}>{todo}
-                            <button onClick={deleteTodo}>Supprimer</button>
-                        </li>
+                        <li onClick={handleTodoClick} key={todo}>{todo}<button onClick={deleteTodo}>X</button></li>
                     ))}
+
                 </ul>
             </div>
         </div>
