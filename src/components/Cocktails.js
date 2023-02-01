@@ -1,25 +1,30 @@
-import React, {useEffect, useState} from "react";
-import Navbar from "./Navbar";
+import axios from "axios";
+import React, { useState, useEffect, } from "react";
 
-function Cocktails() {
-    const [data, setData] = useState("");
-    const getData = async () => {
-        const resp = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic');
-        const json = await resp.json();
-        setData(json);
-    }
-
+const useCocktails = () => {
+    const [items, setItems] = useState([]);
+    const [searchInput, setSearchInput] = useState("");
     useEffect(() => {
-        getData();
-    }, []);
-
+        try {
+            axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`)
+            .then((res) => {
+                console.log(res);
+                setItems(res.data.drinks);
+            });
+        } catch (err) {
+            console.error(err);
+        }
+    }, [searchInput]);
     return (
-        <div>
-            <Navbar />
-            <pre>
-            {JSON.stringify(data, null, 2)}
-            </pre>
+        <div className="cocktails">
+            <input
+                placeholder="search cocktails..."
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                className="input"
+            />
         </div>
-    )
+    );
 }
-export default Cocktails;
+
+export default useCocktails;
