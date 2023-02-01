@@ -27,6 +27,15 @@ function ToDoList() {
 
     }
 
+    //sauvegarder les taches dans le local storage
+    React.useEffect(() => {
+        const data = localStorage.getItem('todos');
+        if (data) {
+            setTodos(JSON.parse(data));
+        }
+    }, []);
+
+
     
     return (
         <div className="ToDoList">
@@ -37,11 +46,13 @@ function ToDoList() {
                 <h1>ToDoList</h1>
                 <form>
                     <input value={input} onChange={event => setInput(event.target.value)} />
-                    <button type="submit" onClick={addTodo}>Ajouter une tache</button>
+                    <button onClick={addTodo} type="submit">Ajouter une tâche</button>
                 </form>
                 <ul>
                     {todos.map(todo => (
-                        <li key={todo} onClick={handleTodoClick}>{todo} <button onClick={deleteTodo}>X</button></li>
+                        <li onClick={handleTodoClick} key={todo}>{todo}
+                            <button onClick={deleteTodo}>Supprimer</button>
+                        </li>
                     ))}
                 </ul>
             </div>
