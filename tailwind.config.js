@@ -13,7 +13,8 @@ module.exports = {
         "warning" : "#FF9500",
         "grey" : "#F5F5F7",
         "grey-lighter" : "#FBFBFB",
-        "grey-darker" : "#333333"
+        "grey-darker" : "#333333",
+        "grey-text" : "#838383"
       }
     },
   },
