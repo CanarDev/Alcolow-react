@@ -2,13 +2,12 @@ import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
-    const [spotlightIsActive, spotlightUpdater] = useState(true);
+    const [spotlightIsActive, spotlightUpdater] = useState(false);
     const spotlightToggle = () => {
         spotlightUpdater((spotlightIsActive) => !spotlightIsActive)
     }
     return (
         <div className="
-            overflow-x-hidden
             navbar
             bg-grey-darker
             text-grey
@@ -40,14 +39,14 @@ function Navbar() {
 
             <div className={`
                 absolute
-                top-0
+                top-0 left-0
                 bg-grey-darker
                 h-20
                 w-full
                 flex
                 justify-center items-center
                 transition-all
-                ${spotlightIsActive ? "left-0" : "left-full"}
+                ${spotlightIsActive ? "opacity-100" : 'opacity-0 invisible'}
             `}>
                 <div className="
                     w-2/3 lg:w-1/3
