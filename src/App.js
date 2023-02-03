@@ -11,10 +11,7 @@ import Cocktails from './components/Cocktails';
 
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Profile from './pages/Profile';
-import BoardUser from './pages/BoardUser';
-import BoardModerator from './pages/BoardModerator';
-import BoardAdmin from './pages/BoardAdmin';
+
 
 
 function App() {
@@ -32,10 +29,6 @@ function App() {
 
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/user" element={<BoardUser />} />
-                <Route path="/mod" element={<BoardModerator />} />
-                <Route path="/admin" element={<BoardAdmin />} />
 
             </Routes>
         </BrowserRouter>
