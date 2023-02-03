@@ -13,6 +13,19 @@
     }
 }
 
+footer h5 {
+  @apply text-black font-semibold mb-3 text-base
+}
+
+footer ul {
+  @apply flex flex-col gap-3
+}
+
+footer li {
+  @apply text-grey-darker text-sm
+}
+
+
 /**
 body {
   margin: 0;
