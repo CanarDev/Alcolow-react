@@ -5,12 +5,13 @@
     export default function PrivateHome() {
         
     return (
-        <div className="container p-5">
+        <div className="">
         <Navbar />
-        <h1 className="display-3 text-light mb-4">
+        <h1 className="">
             Le paradis de la binouze , la zone privée !
         </h1>
         <img src={alcolo} />
+
         </div>
 
     )
