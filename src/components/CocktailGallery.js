@@ -6,8 +6,7 @@ const CocktailsGallery = ({ items }) => {
     <div className="cocktailGallery">
       <h2>Cocktails</h2>
       <div className="cocktails">
-        {items && items.map((cocktail, strDrink) => {
-          // console.log("id: ", cocktail.idDrink);
+        {items && items.map((cocktail) => {
           return (
             <div key={cocktail.idDrink} className="cocktailItem">
               <img className="drink-img" src={cocktail.strDrinkThumb} alt="drink-img"></img>
