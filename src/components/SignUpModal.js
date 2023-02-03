@@ -66,68 +66,30 @@
         <>
         {modalState.signUpModal && (
             <div className="">
-            <div
-            onClick={closeModal}
-            className="">
-            </div>
-                <div
-                className=""
-                style={{ minWidth: "400px" }}
-                >
+            <div onClick={closeModal} className=""></div>
+                <div className="" style={{ minWidth: "400px" }}>
                 <div className="modal-dialog">
                     <div className="modal-content">
                     <div className="modal-header">
+                        <button onClick={closeModal} className="btn-close">fermer</button>
                         <h5 className="modal-title">Inscription</h5>
-                        <button 
-                        onClick={closeModal}
-                        className=""></button>
                     </div>
 
                     <div className="modal-body">
-                        <form 
-                        ref={formRef}
-                        onSubmit={handleForm}
-                        className="sign-up-form">
+                        <form ref={formRef} onSubmit={handleForm} className="sign-up-form">
                         <div className="">
-                            <label htmlFor="signUpEmail" className="form-label">
-                            Email adress
-                            </label>
-                            <input
-                            ref={addInputs}
-                            name="email"
-                            required
-                            type="email"
-                            className="form-control"
-                            id="signUpEmail"
-                            />
+                            <label htmlFor="signUpEmail" className="form-label">Email adress</label>
+                            <input ref={addInputs} name="email" required type="email" className="form-control" id="signUpEmail"/>
                         </div>
 
                         <div className="">
-                            <label htmlFor="signUpPwd" className="form-label">
-                            Password
-                            </label>
-                            <input
-                            ref={addInputs}
-                            name="pwd"
-                            required
-                            type="password"
-                            className="form-control"
-                            id="signUpPwd"
-                            />
+                            <label htmlFor="signUpPwd" className="form-label">Password</label>
+                            <input ref={addInputs} name="pwd" required type="password" className="form-control" id="signUpPwd"/>
                         </div>
 
                         <div className="">
-                            <label htmlFor="repeatPwd" className="form-label">
-                            Repeat Password
-                            </label>
-                            <input
-                            ref={addInputs}
-                            name="pwd"
-                            required
-                            type="password"
-                            className="form-control"
-                            id="repeatPwd"
-                            />
+                            <label htmlFor="repeatPwd" className="form-label">Repeat Password</label>
+                            <input ref={addInputs} name="pwd" required type="password" className="form-control" id="repeatPwd"/>
                             <p className="">{validation}</p>
                         </div>
 

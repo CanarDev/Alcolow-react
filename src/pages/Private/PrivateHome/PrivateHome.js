@@ -11,6 +11,7 @@
             Le paradis de la binouze , la zone privée !
         </h1>
         <img src={alcolo} />
+
         </div>
 
     )
