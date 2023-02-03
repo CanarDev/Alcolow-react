@@ -44,13 +44,13 @@
     return (
         <>
         {modalState.signInModal && (
-            <div className="position-fixed top-0 vw-100 vh-100">
+            <div className="">
             <div
                 onClick={closeModal}
-                className="w-100 h-100 bg-dark bg-opacity-75"
+                className=""
             ></div>
             <div
-                className="position-absolute top-50 start-50 translate-middle"
+                className=""
                 style={{ minWidth: "400px" }}
             >
                 <div className="modal-dialog">
@@ -66,7 +66,7 @@
                         onSubmit={handleForm}
                         className="sign-up-form"
                     >
-                        <div className="mb-3">
+                        <div className="">
                         <label htmlFor="signInEmail" className="form-label">
                             Email adress
                         </label>
@@ -80,7 +80,7 @@
                         />
                         </div>
 
-                        <div className="mb-3">
+                        <div className="">
                         <label htmlFor="signInPwd" className="form-label">
                             Password
                         </label>
@@ -92,10 +92,10 @@
                             className="form-control"
                             id="signInPwd"
                         />
-                        <p className="text-danger mt-1">{validation}</p>
+                        <p className="">{validation}</p>
                         </div>
 
-                        <button className="btn btn-primary">Submit</button>
+                        <button className="">Submit</button>
                     </form>
 
                     </div>

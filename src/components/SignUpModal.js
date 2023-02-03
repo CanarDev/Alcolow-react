@@ -65,13 +65,13 @@
     return (
         <>
         {modalState.signUpModal && (
-            <div className="position-fixed top-0 vw-100 vh-100">
+            <div className="">
             <div
             onClick={closeModal}
-            className="w-100 h-100 bg-dark bg-opacity-75">
+            className="">
             </div>
                 <div
-                className="position-absolute top-50 start-50 translate-middle"
+                className=""
                 style={{ minWidth: "400px" }}
                 >
                 <div className="modal-dialog">
@@ -80,7 +80,7 @@
                         <h5 className="modal-title">Inscription</h5>
                         <button 
                         onClick={closeModal}
-                        className="btn-close"></button>
+                        className=""></button>
                     </div>
 
                     <div className="modal-body">
@@ -88,7 +88,7 @@
                         ref={formRef}
                         onSubmit={handleForm}
                         className="sign-up-form">
-                        <div className="mb-3">
+                        <div className="">
                             <label htmlFor="signUpEmail" className="form-label">
                             Email adress
                             </label>
@@ -102,7 +102,7 @@
                             />
                         </div>
 
-                        <div className="mb-3">
+                        <div className="">
                             <label htmlFor="signUpPwd" className="form-label">
                             Password
                             </label>
@@ -116,7 +116,7 @@
                             />
                         </div>
 
-                        <div className="mb-3">
+                        <div className="">
                             <label htmlFor="repeatPwd" className="form-label">
                             Repeat Password
                             </label>
@@ -128,10 +128,10 @@
                             className="form-control"
                             id="repeatPwd"
                             />
-                            <p className="text-danger mt-1">{validation}</p>
+                            <p className="">{validation}</p>
                         </div>
 
-                        <button className="btn btn-primary">Submit</button>
+                        <button className="">Submit</button>
                         </form>
                     </div>
                     </div>
