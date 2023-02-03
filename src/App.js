@@ -5,6 +5,7 @@ import About from './pages/About';
 import Counter from './components/Counter';
 import ToDoList from './components/TodoList';
 import Cocktails from './components/Cocktails';
+import Contact from "./pages/Contact";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/todolist" element={<ToDoList />} />
                 <Route path="/cocktails" element={<Cocktails />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
             </Routes>
         </BrowserRouter>
 
