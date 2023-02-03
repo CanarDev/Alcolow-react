@@ -7,7 +7,9 @@ function Navbar() {
         spotlightUpdater((spotlightIsActive) => !spotlightIsActive)
     }
     return (
-        <div className="navbar
+        <div className="
+            overflow-x-hidden
+            navbar
             bg-grey-darker
             text-grey
             h-20
@@ -37,7 +39,6 @@ function Navbar() {
             </ul>
 
             <div className={`
-                overflow-x-hidden
                 absolute
                 top-0
                 bg-grey-darker
@@ -73,10 +74,7 @@ function Navbar() {
                         </svg>
                     </div>
 
-
-                    {/* TODO Don't be displayed after the header ... why? */}
                     <div className={`
-                        relative
                         bg-grey
                         rounded-b-3xl
                         w-full
