@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Navbar(props) {
+function SectionHome(props) {
     return (
         <div className={`
             pt-12
@@ -48,4 +48,4 @@ function Navbar(props) {
     );
 }
 
-export default Navbar;
+export default SectionHome;
