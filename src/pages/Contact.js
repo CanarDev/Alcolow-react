@@ -5,7 +5,6 @@ import ContactForm from "../components/ContactForm";
 const Contact = () => {
     return (
         <div>
-            <Navbar />
             <div className="
                 flex
                 py-10

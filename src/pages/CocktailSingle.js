@@ -20,7 +20,6 @@ const CocktailSingle = () => {
     if (cocktail) {
         return (
             <div>
-                <Navbar />
                 <h1>The choosen one {id}</h1>
                 <div key={cocktail.idDrink} className="cocktailItem">
                     <img className="drink-img" src={cocktail.strDrinkThumb} alt="drink-img"></img>

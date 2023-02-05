@@ -9,7 +9,6 @@ import CocktailsGallery from '../components/CocktailGallery';
 const Home = () => {
     return (
         <>
-            <Navbar />
             <SectionHome isBackgroundBlack={true} />
             <SectionHome isBackgroundBlack={false} />
             <div className="
