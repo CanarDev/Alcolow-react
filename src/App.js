@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Cocktails from './pages/Cocktails';
 import About from './pages/About';
-import Cocktails from './components/Cocktails';
 import Footer from "./components/Footer";
 import CocktailSingle from './pages/CocktailSingle';
 import SignUpModal from "./components/SignUpModal";

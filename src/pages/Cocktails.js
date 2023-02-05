@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect, } from "react";
 
-const UseCocktails = ({setItemsRes}) => {
+const Cocktails = ({setItemsRes}) => {
     const [searchInput, setSearchInput] = useState("");
     useEffect(() => {
         try {
@@ -22,8 +22,9 @@ const UseCocktails = ({setItemsRes}) => {
                 onChange={(e) => setSearchInput(e.target.value)}
                 className="input"
             />
+            <h1></h1>
         </div>
     );
 }
 
-export default UseCocktails;
+export default Cocktails;
