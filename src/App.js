@@ -13,19 +13,17 @@ import PrivateHome from "./pages/Private/PrivateHome/PrivateHome";
 function App() {
     return (
         <div>
-          <BrowserRouter>
-              <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/private" element={<Private />}>
-                      <Route path="/private/private-home" element={<PrivateHome />} />
-                  </Route>
-                  <Route path="/cocktails" element={<Cocktails />} />
-                  <Route path="/cocktail/:id" element={<CocktailSingle />} />
-                  <Route path="/about" element={<About />} />
-              </Routes>
-              <SignUpModal />
-              <SignInModal />
-          </BrowserRouter>
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/private" element={<Private />}>
+                  <Route path="/private/private-home" element={<PrivateHome />} />
+              </Route>
+              <Route path="/cocktails" element={<Cocktails />} />
+              <Route path="/cocktail/:id" element={<CocktailSingle />} />
+              <Route path="/about" element={<About />} />
+          </Routes>
+          <SignUpModal />
+          <SignInModal />
           <Footer />
         </div>
     );
