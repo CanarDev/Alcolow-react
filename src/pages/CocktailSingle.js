@@ -1,25 +1,30 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Cta from "../components/Cta";
+import CardProduct from "../components/CardProduct";
 
 const CocktailSingle = () => {
     const { id } = useParams();
     const [cocktail, setCocktail] = React.useState(null)
-    const [ingredients, setIngredients] = React.useState([])
+    const [randCocktails, setRandCocktails] = React.useState([])
 
-    console.log(cocktail)
+    const fetchAleatoryCocktails = (end) => {
 
-    const showIngredients = async () => {
-        setIngredients([
-            cocktail.strIngredient1,
-            cocktail.strIngredient2,
-            cocktail.strIngredient3,
+        for (let i = 1; i <= end; i++) {
+            axios.get(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
+                .then((rescocktailRand) => {
+                    console.log(rescocktailRand.data.drinks[0]);
+                    setRandCocktails(prevCocktail => [...prevCocktail, rescocktailRand.data.drinks[0]])
+                });
+        }
 
-        ])
+
     }
 
     useEffect(() => {
-        showIngredients()
+
+        fetchAleatoryCocktails(3)
         try {
             axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
                 .then((data) => {
@@ -73,22 +78,137 @@ const CocktailSingle = () => {
                         flex-wrap
                         gap-3
                     ">
-                        {ingredients && ingredients.map((ingredient) => {
-                            return (
-                                <div key={ingredient} className="
-                                    p-4
-                                    bg-grey
-                                ">
-                                    {ingredient}
-                                </div>
-                            )
-                        })}
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient1 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient1 ? cocktail.strIngredient1 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient2 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient2 ? cocktail.strIngredient2 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient3 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient3 ? cocktail.strIngredient3 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient4 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient4 ? cocktail.strIngredient4 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient5 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient5 ? cocktail.strIngredient5 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient6 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient6 ? cocktail.strIngredient6 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient7 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient7 ? cocktail.strIngredient7 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient8 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient8 ? cocktail.strIngredient8 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient9 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient9 ? cocktail.strIngredient9 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient11 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient11 ? cocktail.strIngredient11 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient12 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient12 ? cocktail.strIngredient12 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient13 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient13 ? cocktail.strIngredient13 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient14 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient14 ? cocktail.strIngredient14 : "" }
+                        </div>
+                        <div className={`
+                            bg-grey
+                            rounded-xl
+                            p-4
+                            ${cocktail.strIngredient15 ? "block" : "hidden"}
+                        `}>
+                            {cocktail.strIngredient15 ? cocktail.strIngredient15 : "" }
+                        </div>
                     </div>
+                    <h2 className="
+                        font-bold
+                        text-2xl
+                        mb-5
+                    ">Recette :</h2>
+                    <p className="text-grey-text mb-14">{cocktail.strInstructions}</p>
                 </div>
-                <div  className="cocktailItem">
-                    <img className="drink-img" src={cocktail.strDrinkThumb} alt="drink-img"></img>
-                    <div className="drink-name">{cocktail.strDrink}</div>
-                    <div className="drink-alcool">{cocktail.strAlcoholic}</div>
+                <img className="mx-auto rounded-3xl max-w-xl mb-14 w-full" src={cocktail.strDrinkThumb} alt="drink-img"></img>
+                <div className="border mb-14 max-w-4xl mx-auto"></div>
+                <div className="mb-20 mx-auto max-w-4xl w-full">
+                    <Cta />
+                </div>
+                <div className="max-w-4xl mx-auto mb-14 flex flex-col w-full gap-y-3">
+                    {randCocktails && randCocktails.map((cocktail) => {
+                        return (
+                            <CardProduct key={cocktail.idDrink} cocktail={cocktail} isCardProductColumn={false} />
+                        )
+                    })}
                 </div>
             </div>
         );

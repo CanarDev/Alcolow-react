@@ -11,14 +11,13 @@ function CardProduct(props) {
             justify-between
             rounded-3xl
             bg-grey
-            ${props.isCardProductColumn ? "pt-12" : "pt-12"}
+            ${props.isCardProductColumn ? "pt-12" : "px-10"}
         `}>
             <div className={`
                 flex
                 flex-col
                 gap-y-10
-                px-10
-                ${props.isCardProductColumn ? "pb-0" : "pb-12"}
+                ${props.isCardProductColumn ? "pb-0" : "py-12"}
             `}>
                 <ul className="
                     flex
