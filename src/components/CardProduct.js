@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { NavLink } from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
 function CardProduct(props) {
 
@@ -17,7 +17,7 @@ function CardProduct(props) {
                 flex
                 flex-col
                 gap-y-10
-                ${props.isCardProductColumn ? "pb-0" : "py-12"}
+                ${props.isCardProductColumn ? "px-10 pb-0" : "py-12"}
             `}>
                 <ul className="
                     flex
@@ -28,12 +28,12 @@ function CardProduct(props) {
                     <li>{props.cocktail.strAlcoholic}</li>
                     <li>{props.cocktail.strCategory}</li>
                 </ul>
-                <p className="
+                <Link to={`/cocktail/${props.cocktail.idDrink}`} className="
                     text-3xl
                     font-bold
                     mb-8
 
-                ">{props.cocktail.strDrink}</p>
+                ">{props.cocktail.strDrink}</Link>
             </div>
             <img src={props.cocktail.strDrinkThumb} alt="" className={`
                 max-w-lg

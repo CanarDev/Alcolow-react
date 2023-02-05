@@ -23,7 +23,7 @@ const CocktailSingle = () => {
     }
 
     useEffect(() => {
-
+        setRandCocktails([])
         fetchAleatoryCocktails(3)
         try {
             axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)

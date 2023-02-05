@@ -43,7 +43,7 @@ const Cocktails = () => {
 
 
     }
-    useEffect(() => {fetchCategories(); fetchAleatoryCocktails(10); fetchAleatoryLitleCocktails(5)}, [])
+    useEffect(() => {fetchCategories(); setRandCocktails([]); fetchAleatoryCocktails(10); setLitleRandCocktails([]); fetchAleatoryLitleCocktails(5)}, [])
 
 
 
