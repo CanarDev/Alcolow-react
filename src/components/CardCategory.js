@@ -1,23 +1,24 @@
 import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 
-function CardCategory() {
+function CardCategory({category}) {
 
     return (
         <div className="
-            w-52
+            w-36
+            h-fit
             rounded-xl
             bg-grey
-            p-6
+            p-4
             space-y-4
             flex
             flex-col
             items-center
         ">
-            <div className="bg-grey-darker w-36 h-36 rounded-md"></div>
             <p className="
-                text-center
-            ">Category</p>
+                text-sm
+            ">{category.strCategory}</p>
+            {/* TODO make link to category products */}
         </div>
 
     );
