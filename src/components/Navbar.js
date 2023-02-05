@@ -1,11 +1,32 @@
 import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 
+import {UserContext} from "../context/userContext"
+import {Link} from "react-router-dom"
+import {signOut} from "firebase/auth"
+import { useNavigate } from 'react-router-dom'
+import {auth} from "../firebase-config"
+
 function Navbar() {
     const [spotlightIsActive, spotlightUpdater] = useState(false);
     const spotlightToggle = () => {
         spotlightUpdater((spotlightIsActive) => !spotlightIsActive)
     }
+    
+    const {toggleModals} = useContext(UserContext)
+
+        const navigate = useNavigate()
+    
+        const logOut = async () => {
+          try {
+              await signOut(auth)
+              navigate("/")
+          } catch {
+              alert("For some reasons we can't deconnect, please check your internet connexion and retry.")
+          }
+        }
+        
+        
     return (
         <div className="
             navbar
@@ -26,8 +47,8 @@ function Navbar() {
                 <NavLink to="/">
                     <li>home</li>
                 </NavLink>
-                <NavLink to="/products">
-                    <li>products</li>
+                <NavLink to="/cocktails">
+                    <li>cocktails</li>
                 </NavLink>
                 <NavLink to="/contact">
                     <li>contact</li>
@@ -97,8 +118,7 @@ function Navbar() {
                 </div>
             </div>
         </div>
-
-    );
+    )
 }
 
-export default Navbar;
+export default Navbar
