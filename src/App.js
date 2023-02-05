@@ -6,6 +6,7 @@ import Counter from './components/Counter';
 import ToDoList from './components/TodoList';
 import Cocktails from './components/Cocktails';
 import Contact from "./pages/Contact";
+import Cta from './components/Cta';
 
 function App() {
     return (
