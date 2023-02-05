@@ -1,27 +1,21 @@
 import axios from "axios";
-import React, { useState, useEffect, } from "react";
+import React  from "react";
 
-const Cocktails = ({setItemsRes}) => {
-    const [searchInput, setSearchInput] = useState("");
-    useEffect(() => {
-        try {
-            axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`)
-            .then((res) => {
-                console.log(res);
-                setItemsRes(res.data.drinks);
+const Cocktails = () => {
+    try {
+        axios.get(`https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list`)
+            .then((resCategory) => {
+                console.log(resCategory);
+                const categories = resCategory.data.drinks
             });
-        } catch (err) {
-            console.error(err);
-        }
-    }, [searchInput]);
+    } catch (err) {
+        console.error(err);
+    }
+
+
     return (
         <div className="cocktails">
-            <input
-                placeholder="search cocktails..."
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                className="input"
-            />
+            {/* TODO show categories */}
             <h1></h1>
         </div>
     );

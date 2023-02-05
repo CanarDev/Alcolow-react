@@ -1,10 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
 
-import Navbar from '../components/Navbar';
 import SectionHome from "../components/SectionHome";
-import UseCocktails from '../pages/Cocktails';
-import CocktailsGallery from '../components/CocktailGallery';
 
 const Home = () => {
     return (
