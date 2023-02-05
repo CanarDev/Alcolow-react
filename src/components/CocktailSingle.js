@@ -1,6 +1,12 @@
 import React from "react";
 
 const CocktailDetail = ({ cocktailDetail }) => {
+
+  //la page n'est accessible que si l'utilisateur est connecté
+  const email = localStorage.getItem("email");
+  if (!email) {
+    window.location.href = "/login";
+  }
   return (
     <div className="cocktailsingle">
         <img src={cocktailDetail[0].strDrinkThumb} alt="drink-img" />

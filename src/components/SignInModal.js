@@ -25,14 +25,15 @@
             inputs.current[0].value,
             inputs.current[1].value
         );
-        // à tester
-        // formRef.current.reset();
+
         setValidation("");
-        // console.log(cred);
         toggleModals("close");
-        navigate("/private/private-home");
+        navigate("/private/private-home");//si l'utilisateur est connecté, il est redirigé vers la page privée
+        //stocker l'email de l'utilisateur pour le réafficher dans la navbar 
+        const email = inputs.current[0].value;
+        localStorage.setItem("email", email);
         } catch {
-        setValidation("Wopsy, email and/or password incorrect")
+        setValidation("L'email ou le mot de passe est incorrect !");
         }
     };
 

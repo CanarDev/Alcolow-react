@@ -16,7 +16,7 @@ function Navbar() {
             await signOut(auth)
             navigate("/")
         } catch {
-            alert("For some reasons we can't deconnect, please check your internet connexion and retry.")
+            alert("impossible de se déconnecter")
         }
         }
             return (
@@ -31,24 +31,10 @@ function Navbar() {
                     About
                 </Link>
                 
-            
                 <div>
-                    <button 
-                    onClick={() => toggleModals("signUp")}
-                    className="btn btn-primary">
-                    Inscription
-                    </button>
-                    <button 
-                    onClick={() => toggleModals("signIn")}
-                    className="btn btn-primary ms-2">
-                    Connexion
-                    </button>
-                    <button 
-                    onClick={logOut}
-                    className="btn btn-danger ms-2">
-                    Log Out
-                    </button>
-
+                    <button onClick={() => toggleModals("signUp")}className="btn btn-primary">Inscription</button>
+                    <button onClick={() => toggleModals("signIn")} className="btn btn-primary ms-2">Connexion</button>
+                    <button onClick={logOut} className="btn btn-danger ms-2">Déconnexion</button>
                 </div>
                 </nav>
             )

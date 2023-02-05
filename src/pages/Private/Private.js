@@ -7,6 +7,7 @@
     const {currentUser} = useContext(UserContext)
     console.log("PRIVATE", currentUser);
 
+    
     if(!currentUser) {
         return <Navigate to="/" />
     }
