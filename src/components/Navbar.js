@@ -41,7 +41,7 @@ function Navbar() {
             items-center
             px-12
         ">
-            <p className="font-bold">alcolow.</p>
+            <Link to={`/`} className="font-bold">alcolow.</Link>
             <ul className="
                 flex
                 items-center
